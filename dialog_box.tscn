@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxmnt6a0y1chd"]
+
+[ext_resource type="FontFile" uid="uid://by3xab5mi54gi" path="res://assets/others/smiley-sans-v2.0.1/SmileySans-Oblique.otf" id="1_1ki1k"]
+[ext_resource type="Script" uid="uid://be4p7yn3qhhnu" path="res://dialog_box.gd" id="1_8d3xf"]
+[ext_resource type="Texture2D" uid="uid://bki55lg8pqmtr" path="res://assets/others/Base-01.png" id="2_cjsg4"]
+[ext_resource type="Texture2D" uid="uid://dmxnol0thmrqo" path="res://assets/死神/死神.png" id="3_4am6m"]
+[ext_resource type="Texture2D" uid="uid://7jvlrtsv3qr" path="res://assets/others/gdb-keyboard-2.png" id="4_8d3xf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4am6m"]
+content_margin_left = 140.0
+texture = ExtResource("2_cjsg4")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(16, 224, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8f2e"]
+atlas = ExtResource("4_8d3xf")
+region = Rect2(38, 514, 6, 6)
+
+[sub_resource type="Animation" id="Animation_ugo0j"]
+resource_name = "next"
+length = 0.6
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(0.615572, 0.732043),
+"update": 0,
+"values": [Vector2(414, 84), Vector2(414, 78)]
+}
+
+[sub_resource type="Animation" id="Animation_it5w8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(414, 84)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8o3si"]
+_data = {
+&"RESET": SubResource("Animation_it5w8"),
+&"next": SubResource("Animation_ugo0j")
+}
+
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource("1_8d3xf")
+
+[node name="content" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.645
+anchor_right = 0.983
+anchor_bottom = 0.969
+offset_left = 0.163
+offset_top = 9.94499
+offset_right = -0.163025
+offset_bottom = 0.0289917
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("1_1ki1k")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4am6m")
+text = "哇塞，你是哪个？"
+autowrap_mode = 1
+
+[node name="Avatar" type="TextureRect" parent="content"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -63.0
+offset_right = 153.0
+offset_bottom = 94.0
+texture = ExtResource("3_4am6m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Nextindicator" type="TextureRect" parent="content"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 84.0
+offset_right = 442.0
+offset_bottom = 110.0
+scale = Vector2(1, -1)
+texture = SubResource("AtlasTexture_t8f2e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="content/Nextindicator"]
+libraries = {
+&"": SubResource("AnimationLibrary_8o3si")
+}
+autoplay = "next"

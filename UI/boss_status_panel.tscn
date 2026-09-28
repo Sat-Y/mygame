@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://boaj8vison5k0"]
+
+[ext_resource type="Texture2D" uid="uid://bki55lg8pqmtr" path="res://assets/others/Base-01.png" id="1_jsxfq"]
+[ext_resource type="Script" uid="uid://c7wx6lg0jvg1v" path="res://UI/boss_status_panel.gd" id="1_p3ve7"]
+[ext_resource type="Texture2D" uid="uid://ddaw4u0nr7rlf" path="res://assets/恶魔/NightBorne.png" id="2_p3ve7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0lhkp"]
+texture = ExtResource("1_jsxfq")
+region_rect = Rect2(95, 255, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h200b"]
+atlas = ExtResource("2_p3ve7")
+region = Rect2(37, 34, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hav3y"]
+atlas = ExtResource("1_jsxfq")
+region = Rect2(307, 21, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61lom"]
+atlas = ExtResource("1_jsxfq")
+region = Rect2(308, 86, 56, 4)
+
+[node name="BossStatusPanel" type="HBoxContainer"]
+offset_left = 122.0
+offset_right = 210.0
+offset_bottom = 26.0
+scale = Vector2(-1, 1)
+script = ExtResource("1_p3ve7")
+
+[node name="BossBox" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0lhkp")
+
+[node name="Boss" type="TextureRect" parent="BossBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_h200b")
+stretch_mode = 5
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_over = SubResource("AtlasTexture_hav3y")
+texture_progress = SubResource("AtlasTexture_61lom")
+texture_progress_offset = Vector2(1, 1)
