@@ -1,0 +1,85 @@
+{
+  "run": "flat-ppo-01",
+  "selectedCheckpoint": "best",
+  "selectedSteps": 917504,
+  "validationSeeds": [
+    100000,
+    101009,
+    102018,
+    103027
+  ],
+  "selectionScore": 99.59860416666669,
+  "selectionRule": "mean(min(distance,100) - 0.01*time for finish; distance otherwise)",
+  "environmentSHA256": "040d591b50728ee0f6e453e9875ddafdf71721a457970ba0a0596696d352bfaf",
+  "policySHA256": "f2c7700da50f60f8298432ae9b72b65c34610e06c1ee6dbbc8e558cbc895f798",
+  "validationEpisodes": [
+    {
+      "seed": 100000,
+      "assisted": false,
+      "time": 39.949999999998376,
+      "distance": 100.0192554356034,
+      "maxDistance": 100.0192554356034,
+      "steps": 4794,
+      "reason": "finish",
+      "totalReward": 318.8702263542136,
+      "TimeLimit.truncated": false,
+      "episode": {
+        "r": 318.8702263542136,
+        "l": 1199
+      }
+    },
+    {
+      "seed": 103027,
+      "assisted": false,
+      "time": 39.94166666666504,
+      "distance": 100.0036417883446,
+      "maxDistance": 100.0036417883446,
+      "steps": 4793,
+      "reason": "finish",
+      "totalReward": 318.8928254466649,
+      "TimeLimit.truncated": false,
+      "episode": {
+        "r": 318.8928254466649,
+        "l": 1199
+      }
+    },
+    {
+      "seed": 102018,
+      "assisted": false,
+      "time": 40.1333333333317,
+      "distance": 100.0240430240602,
+      "maxDistance": 100.0240430240602,
+      "steps": 4816,
+      "reason": "finish",
+      "totalReward": 319.0743397708174,
+      "TimeLimit.truncated": false,
+      "episode": {
+        "r": 319.0743397708174,
+        "l": 1204
+      }
+    },
+    {
+      "seed": 101009,
+      "assisted": false,
+      "time": 40.533333333331676,
+      "distance": 100.01045233757405,
+      "maxDistance": 100.01045233757405,
+      "steps": 4864,
+      "reason": "finish",
+      "totalReward": 319.1068815147576,
+      "TimeLimit.truncated": false,
+      "episode": {
+        "r": 319.1068815147576,
+        "l": 1216
+      }
+    }
+  ],
+  "trainingConfig": {
+    "steps": 1000000,
+    "seed": 7,
+    "envs": 16,
+    "run": "flat-ppo-01",
+    "resume": null
+  },
+  "scope": "single training seed; flat ground; initial torso perturbation only; not stairs/general robustness"
+}

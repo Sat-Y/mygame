@@ -1,0 +1,47 @@
+{
+  "run": "flat-checkpoints-01",
+  "seed": 7,
+  "envs": 16,
+  "n_steps": 250,
+  "batch_size": 250,
+  "n_epochs": 5,
+  "steps": 1000000,
+  "milestones": [
+    0,
+    100000,
+    500000,
+    1000000
+  ],
+  "checkpointTiming": "after PPO update on the complete rollout",
+  "stepUnit": "aggregate environment transitions across 16 environments",
+  "assisted": false,
+  "environment": "flat-v2",
+  "wallSeconds": 264.5,
+  "environmentSHA256": "040d591b50728ee0f6e453e9875ddafdf71721a457970ba0a0596696d352bfaf",
+  "checkpoints": [
+    {
+      "step": 0,
+      "policy": "step-0.json",
+      "model": "step-0.zip",
+      "sha256": "d251e966587f431589ef0b7805087e80b8e23dbb5fa23005d91199f3b0ab5774"
+    },
+    {
+      "step": 100000,
+      "policy": "step-100000.json",
+      "model": "step-100000.zip",
+      "sha256": "27af6d748f8144f20d686cf4147dfa3eed8ca2188bcdd6b7503a615aca749004"
+    },
+    {
+      "step": 500000,
+      "policy": "step-500000.json",
+      "model": "step-500000.zip",
+      "sha256": "de253040c13457cd93c3a721523c63525a41aae036d5d5197eac4eb4b0a942c0"
+    },
+    {
+      "step": 1000000,
+      "policy": "step-1000000.json",
+      "model": "step-1000000.zip",
+      "sha256": "605633c3dd685bee44abac3a487498072131aa76a8a6f952b6e2a8b9500c0651"
+    }
+  ]
+}

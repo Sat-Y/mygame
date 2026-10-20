@@ -1,0 +1,233 @@
+{
+  "run": "flat-checkpoints-01",
+  "seeds": [
+    42,
+    2000000000,
+    2000001009,
+    2000002018,
+    2000003027
+  ],
+  "note": "Preselected preview seeds; not used to select checkpoints. Single training run.",
+  "episodes": [
+    {
+      "trainingStep": 0,
+      "seed": 42,
+      "assisted": false,
+      "time": 1.9249999999999956,
+      "distance": 1.1213115521574275,
+      "maxDistance": 1.1213115521574275,
+      "steps": 231,
+      "reason": "fall",
+      "totalReward": 1.92282252951539
+    },
+    {
+      "trainingStep": 100000,
+      "seed": 42,
+      "assisted": false,
+      "time": 1.3999999999999975,
+      "distance": 1.2784093687122176,
+      "maxDistance": 1.2784093687122176,
+      "steps": 168,
+      "reason": "fall",
+      "totalReward": 2.2151056196056427
+    },
+    {
+      "trainingStep": 500000,
+      "seed": 42,
+      "assisted": false,
+      "time": 39.43333333333174,
+      "distance": 100.01731546800434,
+      "maxDistance": 100.01731546800434,
+      "steps": 4732,
+      "reason": "finish",
+      "totalReward": 319.7466264686424
+    },
+    {
+      "trainingStep": 1000000,
+      "seed": 42,
+      "assisted": false,
+      "time": 42.66666666666489,
+      "distance": 100.01969558550303,
+      "maxDistance": 100.01969558550303,
+      "steps": 5120,
+      "reason": "finish",
+      "totalReward": 320.57181131126924
+    },
+    {
+      "trainingStep": 0,
+      "seed": 2000000000,
+      "assisted": false,
+      "time": 1.8583333333333292,
+      "distance": 1.1154043827229787,
+      "maxDistance": 1.1154043827229787,
+      "steps": 223,
+      "reason": "fall",
+      "totalReward": 1.8855043646312444
+    },
+    {
+      "trainingStep": 100000,
+      "seed": 2000000000,
+      "assisted": false,
+      "time": 1.3916666666666642,
+      "distance": 1.2793822420756444,
+      "maxDistance": 1.2793822420756444,
+      "steps": 167,
+      "reason": "fall",
+      "totalReward": 2.2154074243440363
+    },
+    {
+      "trainingStep": 500000,
+      "seed": 2000000000,
+      "assisted": false,
+      "time": 39.32499999999841,
+      "distance": 100.01627532837169,
+      "maxDistance": 100.01627532837169,
+      "steps": 4719,
+      "reason": "finish",
+      "totalReward": 319.62102265150054
+    },
+    {
+      "trainingStep": 1000000,
+      "seed": 2000000000,
+      "assisted": false,
+      "time": 41.783333333331605,
+      "distance": 100.01103017772753,
+      "maxDistance": 100.01103017772753,
+      "steps": 5014,
+      "reason": "finish",
+      "totalReward": 320.308578080118
+    },
+    {
+      "trainingStep": 0,
+      "seed": 2000001009,
+      "assisted": false,
+      "time": 2.0499999999999954,
+      "distance": 1.1338654771883305,
+      "maxDistance": 1.1338654771883305,
+      "steps": 246,
+      "reason": "fall",
+      "totalReward": 1.9973023315002039
+    },
+    {
+      "trainingStep": 100000,
+      "seed": 2000001009,
+      "assisted": false,
+      "time": 1.441666666666664,
+      "distance": 1.2975592336727486,
+      "maxDistance": 1.2975592336727486,
+      "steps": 173,
+      "reason": "fall",
+      "totalReward": 2.284885732119996
+    },
+    {
+      "trainingStep": 500000,
+      "seed": 2000001009,
+      "assisted": false,
+      "time": 39.76666666666505,
+      "distance": 100.00500039210762,
+      "maxDistance": 100.00500039210762,
+      "steps": 4772,
+      "reason": "finish",
+      "totalReward": 319.73888273294716
+    },
+    {
+      "trainingStep": 1000000,
+      "seed": 2000001009,
+      "assisted": false,
+      "time": 41.69166666666494,
+      "distance": 100.00573813942356,
+      "maxDistance": 100.00573813942356,
+      "steps": 5003,
+      "reason": "finish",
+      "totalReward": 320.2505776741596
+    },
+    {
+      "trainingStep": 0,
+      "seed": 2000002018,
+      "assisted": false,
+      "time": 2.291666666666661,
+      "distance": 1.1281582685395106,
+      "maxDistance": 1.1281582685395106,
+      "steps": 275,
+      "reason": "fall",
+      "totalReward": 2.0525109581553047
+    },
+    {
+      "trainingStep": 100000,
+      "seed": 2000002018,
+      "assisted": false,
+      "time": 1.358333333333331,
+      "distance": 1.2529387098105877,
+      "maxDistance": 1.2529387098105877,
+      "steps": 163,
+      "reason": "fall",
+      "totalReward": 2.127485310862256
+    },
+    {
+      "trainingStep": 500000,
+      "seed": 2000002018,
+      "assisted": false,
+      "time": 39.308333333331746,
+      "distance": 100.00401914638287,
+      "maxDistance": 100.00401914638287,
+      "steps": 4717,
+      "reason": "finish",
+      "totalReward": 319.6262256123007
+    },
+    {
+      "trainingStep": 1000000,
+      "seed": 2000002018,
+      "assisted": false,
+      "time": 42.23333333333158,
+      "distance": 100.01744015236925,
+      "maxDistance": 100.01744015236925,
+      "steps": 5068,
+      "reason": "finish",
+      "totalReward": 320.4272143731259
+    },
+    {
+      "trainingStep": 0,
+      "seed": 2000003027,
+      "assisted": false,
+      "time": 1.933333333333329,
+      "distance": 1.1220642179081615,
+      "maxDistance": 1.1220642179081615,
+      "steps": 232,
+      "reason": "fall",
+      "totalReward": 1.9276965471391763
+    },
+    {
+      "trainingStep": 100000,
+      "seed": 2000003027,
+      "assisted": false,
+      "time": 1.3999999999999975,
+      "distance": 1.2778826581647538,
+      "maxDistance": 1.2778826581647538,
+      "steps": 168,
+      "reason": "fall",
+      "totalReward": 2.2139294128463916
+    },
+    {
+      "trainingStep": 500000,
+      "seed": 2000003027,
+      "assisted": false,
+      "time": 38.90833333333177,
+      "distance": 100.01395022746578,
+      "maxDistance": 100.01395022746578,
+      "steps": 4669,
+      "reason": "finish",
+      "totalReward": 319.6139696362794
+    },
+    {
+      "trainingStep": 1000000,
+      "seed": 2000003027,
+      "assisted": false,
+      "time": 42.15833333333158,
+      "distance": 100.01156510207177,
+      "maxDistance": 100.01156510207177,
+      "steps": 5059,
+      "reason": "finish",
+      "totalReward": 320.48430091854686
+    }
+  ]
+}

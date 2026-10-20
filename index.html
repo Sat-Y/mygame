@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>步态实验室 · QWOP 物理跑步</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="training-ui.css"></head>
+<body>
+<!-- THESIS: A playable athletics test field. OWN-WORLD: Stadium blue, pale sky, white timing rails, orange athlete. STORY: Start, coordinate joints, fall, retry, inspect an actual result. FIRST VIEWPORT: Wide track with a compact timing and control desk. FORM: Athletics timing console, direction 4, seed 824ce8bd. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
+<header><a class="brand" href="./" aria-label="步态实验室首页"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M5 27 15 9h7L12 27zm12 0L27 9h5L22 27z" fill="currentColor"/></svg><span>步态实验室 <small>STRIDE LAB</small></span></a><span class="version">QWOP 风格物理原型 <span>v0.1</span></span></header>
+<main>
+<div class="intro"><div><h1>从第一步开始。</h1><p>四个按键，两条腿。找到平衡，向 100 米终点出发。</p></div><a href="compare.html" class="comparison-link">查看训练四分屏对比 →</a></div>
+<section class="arena" aria-label="物理跑步游戏">
+  <div class="arena-toolbar"><div class="mode-tabs" role="group" aria-label="游戏难度"><button id="practice" class="selected" aria-pressed="true">辅助练习</button><button id="standard" aria-pressed="false">标准挑战</button></div><div class="trial"><span id="modeTag">平衡辅助开启</span><span>SEED <b id="seedLabel">42</b></span></div></div>
+  <div class="stage" id="stage"><canvas id="game" aria-label="QWOP 跑道，使用 Q W 控制大腿，O P 控制小腿"></canvas>
+    <div class="score"><span>前进距离</span><div><strong id="distance">0.00</strong><span>m</span></div><small>目标 100 m</small></div>
+    <div class="live-state"><span id="statusDot" class="dot"></span><span id="status">准备就绪</span></div>
+    <div id="startHint" class="start-hint"><span>一点协调，一点耐心。</span><p>按下方「开始跑步」，或直接按 Q / W / O / P</p></div>
+    <div id="result" class="result" hidden><span id="resultTitle">这一步，值得再试。</span><strong id="resultDistance">0.00 m</strong><p id="resultText"></p><button id="retry">再跑一次 <kbd>R</kbd></button></div>
+    <div class="stage-bottom"><span>100 m · 平地跑道</span><span id="physicsLabel">辅助练习 · 含虚拟平衡支撑</span></div>
+  </div>
+  <div class="telemetry"><div><span>运动时间</span><strong id="time">0.00 <small>s</small></strong></div><div><span>水平速度</span><strong id="speed">0.00 <small>m/s</small></strong></div><div><span>躯干倾角</span><strong id="angle">0.0 <small>°</small></strong></div><div><span>本模式最佳</span><strong id="best">0.00 <small>m</small></strong></div><div class="contact"><span>脚部接地</span><strong><i id="leftContact"></i>左 <i id="rightContact"></i>右</strong></div></div>
+</section>
+<section class="control-desk" aria-label="游戏操作">
+ <div class="key-guide"><div class="key-pair"><div><button class="key" data-key="q" aria-label="Q 左大腿前摆">Q</button><button class="key" data-key="w" aria-label="W 右大腿前摆">W</button></div><span>大腿前摆 <small>松开回摆</small></span></div><div class="key-pair"><div><button class="key" data-key="o" aria-label="O 左小腿伸展">O</button><button class="key" data-key="p" aria-label="P 右小腿伸展">P</button></div><span>小腿伸展 <small>松开屈膝</small></span></div></div>
+ <div class="run-controls"><button class="primary" id="start">开始跑步 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 4 6 6-6 6M3 10h11"/></svg></button><button id="pause" disabled>暂停 <kbd>空格</kbd></button><button id="reset">重置 <kbd>R</kbd></button></div>
+</section>
+<div class="under-track"><p id="controlHint"><b>试试交替按 Q + P、W + O。</b>按住会持续发力；摔倒是学习的一部分。</p><div class="policy-controls"><label>控制方式 <select id="controller"><option value="manual">手动 Q / W / O / P</option><option value="rule">固定节奏规则（非 AI）</option><option value="random">随机策略（非 AI）</option><option value="ppo" id="ppoOption" disabled>PPO 模型加载中</option></select></label><label>种子 <input id="seedInput" type="number" min="0" max="4294967295" step="1" value="42"></label></div></div>
+<section class="training-report" aria-label="PPO 训练与评估"><div class="records-heading"><div><h2>从试错，到迈步。</h2><p id="modelStatus" role="status">正在读取本地 PPO 模型与评估结果…</p></div><span class="model-badge">无辅助 · 平地 PPO</span></div><div class="report-grid"><div><h3>训练中的验证距离</h3><canvas id="learningCurve" height="160" aria-label="PPO 验证距离随训练步数变化"></canvas><p class="report-note">验证结果用于选模；下表为冻结模型后的独立测试。</p></div><div><h3>同条件策略对照</h3><div class="table-scroll"><table><thead><tr><th>控制方式</th><th>平均距离</th><th>摔倒率</th></tr></thead><tbody id="evaluationRows"><tr><td colspan="3">等待评估数据</td></tr></tbody></table></div><p id="evalNote" class="report-note">所有策略关闭平衡辅助，使用相同物理参数与控制频率。</p></div></div></section>
+<section class="records"><div class="records-heading"><div><h2>每一次尝试，都有记录。</h2><p>记录本次页面会话的完整回合，练习与挑战分别标注。</p></div><button id="export" disabled>导出 CSV <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg></button></div><div class="table-scroll"><table><thead><tr><th>回合</th><th>模式 / 控制</th><th>距离</th><th>时间</th><th>结束原因</th><th>种子</th></tr></thead><tbody id="records"><tr><td colspan="6" class="empty">你的第一条成绩，正在起跑线上。</td></tr></tbody></table></div></section>
+<footer><span>自建 QWOP 风格环境 · 毕业设计基础原型</span><span id="footerStage">平地 PPO · 本地模型推理 · 实验版本 flat-v2</span></footer>
+</main>
+<script src="node_modules/planck/dist/planck.min.js"></script><script src="environment.js"></script><script src="policy.js"></script><script src="renderer.js"></script><script src="app.js"></script>
+</body></html>

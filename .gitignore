@@ -1,7 +1,9 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
-
-# Exported builds (regenerable artifacts)
-/build/
-/export/
+node_modules/
+test-results/
+*.log
+.venv/
+__pycache__/
+training/runs/
+*.py[cod]
+.DS_Store
+Thumbs.db

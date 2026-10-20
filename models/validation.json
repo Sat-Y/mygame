@@ -1,0 +1,107 @@
+[
+  {
+    "steps": 65536,
+    "distance": 1.1925077640331798,
+    "survival": 1.787499999999996,
+    "fallRate": 1.0,
+    "wallSeconds": 18.9
+  },
+  {
+    "steps": 131072,
+    "distance": 8.011002730284062,
+    "survival": 60.00833333333057,
+    "fallRate": 0.0,
+    "wallSeconds": 35.9
+  },
+  {
+    "steps": 196608,
+    "distance": 42.73655930120222,
+    "survival": 60.00833333333057,
+    "fallRate": 0.0,
+    "wallSeconds": 53.8
+  },
+  {
+    "steps": 262144,
+    "distance": 67.54771080019958,
+    "survival": 60.00833333333057,
+    "fallRate": 0.0,
+    "wallSeconds": 69.7
+  },
+  {
+    "steps": 327680,
+    "distance": 100.00938339264468,
+    "survival": 51.2604166666644,
+    "fallRate": 0.0,
+    "wallSeconds": 86.0
+  },
+  {
+    "steps": 393216,
+    "distance": 100.00612711352821,
+    "survival": 41.8395833333316,
+    "fallRate": 0.0,
+    "wallSeconds": 101.5
+  },
+  {
+    "steps": 458752,
+    "distance": 100.01144397982162,
+    "survival": 43.86666666666482,
+    "fallRate": 0.0,
+    "wallSeconds": 117.2
+  },
+  {
+    "steps": 524288,
+    "distance": 100.01293063985997,
+    "survival": 40.712499999998336,
+    "fallRate": 0.0,
+    "wallSeconds": 132.8
+  },
+  {
+    "steps": 589824,
+    "distance": 100.00837078686556,
+    "survival": 40.093749999998366,
+    "fallRate": 0.0,
+    "wallSeconds": 147.8
+  },
+  {
+    "steps": 655360,
+    "distance": 100.01154819230096,
+    "survival": 39.624999999998394,
+    "fallRate": 0.0,
+    "wallSeconds": 163.2
+  },
+  {
+    "steps": 720896,
+    "distance": 100.01148842769567,
+    "survival": 38.81249999999844,
+    "fallRate": 0.0,
+    "wallSeconds": 179.2
+  },
+  {
+    "steps": 786432,
+    "distance": 100.01098595614127,
+    "survival": 39.570833333331734,
+    "fallRate": 0.0,
+    "wallSeconds": 194.9
+  },
+  {
+    "steps": 851968,
+    "distance": 100.00998106961453,
+    "survival": 39.714583333331724,
+    "fallRate": 0.0,
+    "wallSeconds": 209.8
+  },
+  {
+    "steps": 917504,
+    "distance": 100.01434814639558,
+    "survival": 40.1395833333317,
+    "fallRate": 0.0,
+    "wallSeconds": 225.6
+  },
+  {
+    "steps": 983040,
+    "distance": 100.0107899043708,
+    "survival": 38.839583333331774,
+    "fallRate": 0.0,
+    "wallSeconds": 241.2
+  }
+]
